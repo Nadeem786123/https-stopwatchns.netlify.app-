@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300&display=swap');
+/* Background-white */
+
+:root{
+    --bg1:#e8eaec;
+    --bg2:#6e4ed2;
+    --text-color:#979797;
+    --color:#000;
+    --tcolor:rgb(119 119 119);
+
+    --boxShadow:
+    7px 7px 15px #45566754,
+    -8px -8px 15px rgb(81 101 121/4%),
+    inset -5px -4px 13px 0px rgb(81 101 121/35%),
+    inset 6px 7px 12px 0px rgb(255 255 255/94%);
+    
+    --boxShadow2:
+    inset 4px 4px 8px rgb(189 200 213),
+    inset -4px -4px 8px rgb(255 255 255);
+
+    --boxShadow3:
+    4px 4px 8px rgb(189 200 213),
+    -4px -4px 8px rgb(255 255 255);
+
+    --sbShadow:
+    5px 5px 7px rgb( 0 0 0 / 25%),
+    inset 2px 2px 5px rgb(255 255 255 / 25%),
+    inset -3px -3px 5px rgb( 0 0 0 / 12%);
+}
+
+/*  Bcakground dark */
+body.dark{
+    --bg1: #2f363e;
+    --text-color:rgb(255,208,0);
+    --color:#fff;
+    --tcolor:rgb(243,243,243);
+
+    --boxShadow:
+    5px 5px 15px rgba(0,0,0,0.25),
+    5px 15px 15px rgba(0,0,0,0.25),
+    inset 5px 5px 10px rgba(0,0,0,0.5),
+    inset 5px 5px 20px rgba(255,255,255,0.2),
+    inset -5px -5px 15px rgba(0,0,0,0.75);
+
+    --boxShadow2:
+    inset -3px -3px 6px rgb(73,78,83),
+    inset 3px 3px 6px rgb(32,28,28);
+
+    --boxShadow3:
+    -3px -3px 6px rgb(73,78,83),
+    3px 3px 6px rgb(32,28,28);
+
+    --sbShadow:
+    5px 5px 7px rgb(0 0 0/ 25%),
+    inset 2px 2px 5px rgb(255 255 255/25%),
+    inset -3px -3px 5px rgb(0 0 0 / 50%);
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+html,body{
+    height: 100%;
+}
+body{
+    display:  grid;
+    place-items: center;
+    text-align: center;
+    background: var(--bg1);
+}
+
+#container{
+    width: 600px;
+    background: var(--bg1);
+    box-shadow: var(--boxShadow);
+    border-radius: 32px;
+    padding: 70px 35px;
+    margin-top: 40px;
+}
+.timer{
+   position: relative;
+   width: 100%;
+   background: var(--bg1);
+   box-shadow: var(--boxShadow2);
+    margin-left: 5px;
+   display: flex;
+   padding: 15px 45px;
+   font-size: 18px;
+   align-items: center;
+   justify-content: space-around;
+   border-radius: 5px;
+   margin-top: 56px;
+
+}
+h1{
+    font-size: 33px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    color: var(--color);
+    box-shadow: var(--boxShadow3);
+    width:50% ;
+    margin-top: 0;
+    border-radius: 32px;
+    margin-left: 25%;
+
+}
+span{
+    line-height: 80px;
+    width: 30px;
+    color: #fff;
+    border-radius: 20%;
+    box-shadow: var(--sbShadow2);
+    font-size: 28px;
+    margin-left: -2px;
+    padding:0px 1px;
+    /* display: flex; */
+}
+.text{
+    color: #4994f8;
+    font-size:  18px;
+    /* box-shadow: var(--boxShadow3); */
+    margin: 5px;
+    /* margin: 5px; */
+    /* padding: -30px; */
+    border-radius: 30%;
+    left: -20px;
+}
+.digit{
+    margin:10px 10px;
+    width: 82%;
+    height: 80px;
+    color: var(--color);
+    font-size: 25px;
+    font-weight: 600;
+    background: var(--bg1);
+    border: none;
+    outline: none;
+    box-shadow: var(--boxShadow3);
+    border-radius: 25px;
+   
+}
+ button{
+    margin: 25px 0;
+    width: 25%;
+    height: 45px;
+    color: var(--color);
+    font-size: 18px;
+    font-weight: 600;
+    background: var(--bg1);
+    border: none;
+    outline: none;
+    box-shadow: var(--boxShadow3);
+    border-radius: 25px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+#start:focus{
+    color: #14823c;
+}
+#stop:focus{
+    color:#ff6100;
+}
+#reset:focus{
+    color:red;
+}
+.dark-light{
+    left: 50px;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 50px;
+    width: 60px;
+    height: 60px;
+    box-shadow: var(--boxShadow3);
+    border-radius: 50%;
+
+}
+.dark-light i{
+    position: absolute;
+    color: var(--tcolor);
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.dark-light i.fa-sun-bright{
+    opacity: 0;
+    pointer-events: none;
+    /* font-size: 600; */
+
+}
+.dark-light.active i.fa-sun-bright{
+    opacity: 1;
+    pointer-events: auto;
+}
+.dark-light.active i.fa-moon{
+    pointer-events: none;
+    opacity: 0;
+}
+
+@media only screen and (max-width: 667px) {
+    #container{
+        padding:0;
+        width: 365px;
+        height: 70%;
+    }
+    h1{
+        font-size: 22px;
+        margin-top: 55px;
+    }
+    .digit{
+        width: 90%;
+        /* margin-top: 29px; */
+        /* padding-bottom: 9px; */
+        margin-left: -3px;
+        
+   }
+  
+    .text{
+        font-size: 16px;
+        /* border-radius: 32px; */
+        /* height: 50%; */
+        font-weight: 600;
+        margin-top: -6px;
+        margin-left: -7px ;
+       
+    }
+}
